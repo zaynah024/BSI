@@ -52,7 +52,7 @@ const MobileNav = () => {
             </li>
 
             <li>
-              <NavLink to="/BookOnlineConsultancy" onClick={closeMenu}>
+              <NavLink to="/Book-Online-Consultancy" onClick={closeMenu}>
                 Book Online Consultation
               </NavLink>
             </li>
