@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", serif;
+}
+
+.service ul {
+  list-style-image: url("./assets/Main/tik.png");
+  padding: 0 0 0 5px;
+}
+
+.service ul li {
+  margin: 5px;
+}
+
+.footer {
+  background-image: url("./assets/Main/footer.png");
+  background-repeat: no-repeat;
+  background-position: end;
+  background-size: cover;
+}
+a {
+  cursor: pointer;
+}
+
+/* slider image  */
+.general-container {
+  display: flex;
+  height: 21rem;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.radio {
+  display: none;
+}
+
+.content {
+  background: transparent;
+  background-image: url("./assets/Main/country/1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1rem;
+  cursor: pointer;
+  flex: 1;
+  margin-right: 0.2rem;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.05, 0.6, 0.39, 0.94);
+}
+
+.content::before {
+  background: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.content:hover {
+  box-shadow: 0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+.content:nth-of-type(2) {
+  background: transparent;
+  background-image: url("./assets/Main/country/2.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content:nth-of-type(3) {
+  background: transparent;
+  background-image: url("./assets/Main/country/3.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content:nth-of-type(4) {
+  background: transparent;
+  background-image: url("./assets/Main/country/4.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-title {
+  bottom: 1.2rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  left: 1.5rem;
+  line-height: 1.1;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(2rem);
+  transition: 290ms cubic-bezier(0.05, 0.62, 0.4, 0.95) 300ms;
+  transition-property: opacity, transform;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.title-card {
+  top: 2rem;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  left: 1.5rem;
+  line-height: 1.1;
+  opacity: 0;
+  position: absolute;
+  transform: translateX(2rem);
+  transition: 290ms cubic-bezier(0.05, 0.6, 0.42, 0.94) 300ms;
+  transition-property: opacity, transform;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.subsubtitle {
+  font-size: 0.85rem;
+}
+
+.paddT {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.radio:checked + .content {
+  border-radius: 1rem;
+  flex: 3;
+}
+
+.radio:checked + .content > .card-title {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.radio:checked + .content > .title-card {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.marg-bott {
+  margin-bottom: 1.5rem;
+}
