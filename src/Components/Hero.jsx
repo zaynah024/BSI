@@ -33,7 +33,7 @@ const Hero = () => {
           
           {/* LEFT CONTENT — ALWAYS VISIBLE */}
           <motion.div
-            className="md:w-1/2"
+            className="md:w-1/2 relative z-20"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -99,7 +99,7 @@ const Hero = () => {
             <motion.img
               src={font}
               alt="Students looking at a tablet"
-              className="rounded-lg -top-24 absolute"
+              className="rounded-lg -top-24 absolute pointer-events-none z-10"
             />
           </motion.div>
         </div>
@@ -108,7 +108,7 @@ const Hero = () => {
         <motion.img
           src={tower}
           alt=""
-          className="absolute bottom-0 left-4 w-64 hidden md:block"
+          className="absolute bottom-0 left-4 w-64 hidden md:block pointer-events-none z-0"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
