@@ -3,10 +3,13 @@
 import { CgArrowRight } from "react-icons/cg";
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import font from "../assets/Main/herfont.png";
 import tower from "../assets/lefttower.png";
 import element from "../assets/generalHeader/elements.png";
+
+const MotionLink = motion(Link);
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -54,11 +57,11 @@ const Hero = () => {
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
-              <motion.a
-                href="/Book-Online-Consultancy"
+              <MotionLink
+                to="/Book-Online-Consultancy"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary rounded-full hover:bg-blue-700 text-white font-medium py-4 px-6 flex items-center gap-2 shadow-lg inline-flex cursor-pointer"
+                className="bg-primary rounded-full hover:bg-blue-700 text-white font-medium py-4 px-6 flex items-center gap-2 shadow-lg inline-flex"
               >
                 Book Consultation
                 <motion.span
@@ -67,7 +70,7 @@ const Hero = () => {
                 >
                   <CgArrowRight />
                 </motion.span>
-              </motion.a>
+              </MotionLink>
 
               <motion.button
                 whileHover={{ x: 4 }}

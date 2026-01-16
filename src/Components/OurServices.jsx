@@ -1,20 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
-
-import service from "../assets/Main/service1.png";
-import service1 from "../assets/Main/service2.png";
-import service2 from "../assets/Main/service3.png";
-import service3 from "../assets/Main/service4.png";
-import service4 from "../assets/Main/service5.png";
-import service6 from "../assets/Main/service6.png";
-
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+import service from "../assets/Main/service5.png";
+import service6 from "../assets/Main/service6.png";
+import service3 from "../assets/Main/service3.png";
+import service4 from "../assets/Main/service4.png";
+import service1 from "../assets/Main/service1.png";
+import service2 from "../assets/Main/service2.png";
+
+const MotionLink = motion(Link);
 
 const services = [
   { img: service, title: "Student Visa", href: "/study-visa" },
   { img: service6, title: "Visit Visa", href: "/visit-visa" },
   { img: service3, title: "Immigration", href: "/immigration" },
-  { img: service4, title: "Consultancy", href: "/Book-Online-Consultancy" }, // mapped to /visit-visa as requested
+  { img: service4, title: "Consultancy", href: "/Book-Online-Consultancy" },
   { img: service1, title: "Work Visa", href: "/work-visa" },
   { img: service2, title: "UK Services", href: "/uk-services" },
 ];
@@ -53,9 +55,9 @@ const OurServices = () => {
         {/* SERVICES GRID */}
         <div className="grid md:grid-cols-3 gap-6 w-[70%] md:w-[80%] mx-auto">
           {services.map((item, i) => (
-            <motion.a
+            <MotionLink
               key={i}
-              href={item.href}
+              to={item.href}
               custom={i}
               variants={cardVariants}
               initial="hidden"
@@ -85,7 +87,7 @@ const OurServices = () => {
                   <FaArrowRight className="text-primary" />
                 </motion.span>
               </motion.span>
-            </motion.a>
+            </MotionLink>
           ))}
         </div>
       </div>
